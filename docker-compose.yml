@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/development/Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/go/src/github.com/abyssparanoia/application-boilerplate
+    command: ash -c "source .envrc && realize start --name server"
+
+  default-db:
+    build: ./db/default
+    volumes:
+      - ./db/default/data:/var/lib/mysql
+      - ./db/default/initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    environment:
+      TZ: "Asia/Tokyo"
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: defaultdb

@@ -1,0 +1,28 @@
+title: user
+type: object
+properties:
+  id:
+    type: string
+  display_name:
+    type: string
+  iconImagePath:
+    type: string
+  backgroundImagePath:
+    type: string
+  profile:
+    type: string
+  email:
+    type: string
+  created_at:
+    type: number
+  updated_at:
+    type: number
+  deleted_at:
+    type: number
+required:
+  - id
+  - display_name
+  - iconImagePath
+  - backgroundImagePath
+  - created_at
+  - updated_at

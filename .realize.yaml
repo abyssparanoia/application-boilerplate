@@ -1,0 +1,28 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+  - name: server
+    path: .
+    commands:
+      install:
+        status: true
+        method: make build
+      run:
+        status: true
+        method: ./rapid-cli
+      fmt:
+        status: true
+    args:
+      - server
+      - run
+    watcher:
+      extensions:
+        - go
+      paths:
+        - /
+      ignored_paths:
+        - .git
+        - .realize
+        - vendor

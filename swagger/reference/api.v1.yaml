@@ -1,0 +1,32 @@
+swagger: '2.0'
+info:
+  title: api
+  version: '1.0'
+host: 'localhost:8080'
+schemes:
+  - http
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  '/users/{user_id}':
+    parameters:
+      - type: string
+        name: user_id
+        in: path
+        required: true
+    get:
+      summary: ユーザーの詳細情報を取得する
+      tags: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              user:
+                $ref: ../models/user.v1.yaml
+      operationId: get-users-user_id
+definitions: {}
+basePath: /v1
