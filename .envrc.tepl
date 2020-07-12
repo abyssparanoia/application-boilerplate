@@ -1,0 +1,12 @@
+# shared
+export GOOGLE_APPLICATION_CREDENTIALS="./serviceAccount.json"
+export PROJECT_ID="sample"
+
+# default server
+export ENV="local"
+export PORT="8080"
+export MIN_LOG_SEVERITY="DEBUG"
+export DB_HOST="tcp(localhost:3306)"
+export DB_USER="root"
+export DB_PASSWORD="password"
+export DB_DATABASE="defaultdb"
