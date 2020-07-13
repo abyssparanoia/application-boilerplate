@@ -50,7 +50,7 @@ require (
 	go.uber.org/zap v1.15.0
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381
 	golang.org/x/text v0.3.3
-	google.golang.org/api v0.28.0
+	google.golang.org/api v0.29.0
 	google.golang.org/genproto v0.0.0-20200626011028-ee7919e894b5 // indirect
 	google.golang.org/grpc v1.30.0
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
