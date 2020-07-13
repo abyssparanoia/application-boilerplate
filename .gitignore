@@ -2,7 +2,7 @@
 secret/*
 .envrc
 db/*/data/*
-.env.*
+.env
 serviceAccount.json
 rapid-cli
 lib
