@@ -7,7 +7,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/DATA-DOG/go-sqlmock v1.4.1 // indirect
 	github.com/blendle/zapdriver v1.3.1
-	github.com/bxcodec/faker v2.0.1+incompatible
+	github.com/bxcodec/faker/v3 v3.5.0
 	github.com/caarlos0/env/v6 v6.3.0
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/denisenkom/go-mssqldb v0.0.0-20200206145737-bbfc9a55622e // indirect
