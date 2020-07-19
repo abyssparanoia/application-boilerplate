@@ -1,7 +1,7 @@
 # note: call scripts from /scripts
 
 init:
-	go get -u volatiletech/sqlboiler
+	go get -u github.com/volatiletech/sqlboiler/v4
 
 format:
 	$(call format)
