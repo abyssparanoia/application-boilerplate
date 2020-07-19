@@ -8,7 +8,7 @@ import (
 	"github.com/abyssparanoia/application-boilerplate/internal/server/handler/api"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/infrastructure/repository"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/usecase"
-	"github.com/volatiletech/sqlboiler/boil"
+	"github.com/volatiletech/sqlboiler/v4/boil"
 	"go.uber.org/zap"
 )
 

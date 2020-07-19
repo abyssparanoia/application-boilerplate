@@ -3,7 +3,7 @@ package entity
 import (
 	"github.com/abyssparanoia/application-boilerplate/internal/dbmodels/defaultdb"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/model"
-	"github.com/volatiletech/null"
+	"github.com/volatiletech/null/v8"
 )
 
 // User ... user entity
