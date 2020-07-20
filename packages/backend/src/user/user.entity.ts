@@ -41,14 +41,12 @@ export class User implements IUser {
   @DeleteDateColumn({ name: 'deleted_at', type: 'timestamp' })
   readonly deletedAt?: Date
 
-  constructor(param: IUser) {
+  new(param: IUser) {
     this.id = param.id
     this.displayName = param.displayName
     this.iconImagePath = param.iconImagePath
     this.backgroundImagePath = param.backgroundImagePath
     this.profile = param.profile
     this.email = param.email
-    this.createdAt = param.createdAt
-    this.updatedAt = param.updatedAt
   }
 }

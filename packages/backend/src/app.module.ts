@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UserModule } from './user/user.module'
+import { FirebaseModule } from 'nestjs-firebase'
 
 @Module({
   imports: [
@@ -15,6 +16,9 @@ import { UserModule } from './user/user.module'
       database: 'defaultdb',
       entities: ['./**/*.entity{.ts,.js}'],
       synchronize: true
+    }),
+    FirebaseModule.forRoot({
+      googleApplicationCredential: './serviceAccount.json'
     }),
     UserModule
   ]
