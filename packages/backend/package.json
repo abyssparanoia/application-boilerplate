@@ -22,13 +22,16 @@
     "@nestjs/config": "0.5.0",
     "@nestjs/core": "7.3.2",
     "@nestjs/platform-express": "7.3.2",
+    "@nestjs/typeorm": "^7.1.0",
     "class-transformer": "0.2.3",
     "class-validator": "0.12.2",
     "dotenv": "8.2.0",
     "firebase-admin": "9.0.0",
+    "mysql": "^2.18.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "rxjs": "6.6.0"
+    "rxjs": "6.6.0",
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@nestjs/testing": "7.3.2",
