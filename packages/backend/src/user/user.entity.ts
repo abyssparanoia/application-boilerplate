@@ -20,12 +20,12 @@ export class User {
   @Column({ name: 'email', length: '1024', nullable: true })
   email?: string
 
-  @CreateDateColumn({ name: 'created_at', type: 'timestamp with time zone' })
+  @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
   readonly createdAt: Date
 
-  @UpdateDateColumn({ name: 'updated_at', type: 'timestamp with time zone' })
+  @UpdateDateColumn({ name: 'updated_at', type: 'timestamp' })
   readonly updatedAt: Date
 
-  @DeleteDateColumn({ name: 'deleted_at', type: 'timestamp with time zone' })
+  @DeleteDateColumn({ name: 'deleted_at', type: 'timestamp' })
   readonly deletedAt?: Date
 }
