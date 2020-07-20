@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
-    "start:debug": "nodemon --config nodemon-debug.json",
+    "start:dev": "nodemon --config nodemon.json",
     "start:prod": "node dist/main.js",
     "test": "jest",
     "test:watch": "jest --watch",
