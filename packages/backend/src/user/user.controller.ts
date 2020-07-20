@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common'
+import { Controller, Get, Post, Body, Param } from '@nestjs/common'
 import { SignInRequest } from './user.request'
 import { UserService } from './user.service'
 
@@ -6,9 +6,9 @@ import { UserService } from './user.service'
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get()
-  getHello() {
-    return this.userService.getById('DUMMY_USER_ID')
+  @Get(':userId')
+  get(@Param('userId') userId: string) {
+    return this.userService.getById(userId)
   }
 
   @Post()
