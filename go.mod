@@ -5,6 +5,7 @@ go 1.14
 require (
 	cloud.google.com/go/firestore v1.1.1
 	firebase.google.com/go v3.13.0+incompatible
+	firebase.google.com/go/v4 v4.0.0
 	github.com/blendle/zapdriver v1.3.1
 	github.com/bxcodec/faker v2.0.1+incompatible
 	github.com/caarlos0/env/v6 v6.3.0
