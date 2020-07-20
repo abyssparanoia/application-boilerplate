@@ -10274,6 +10274,11 @@ neo-async@2.6.1, neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+nestjs-firebase@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/nestjs-firebase/-/nestjs-firebase-1.0.0.tgz#45cf4a54b559d7fc461117d6ca108ed85d2fdee4"
+  integrity sha512-aZFC+2IHDIrvaUxlUHdAQBRxIy4MpDD0kmcnhB+AstCcytSkdKS9hsV1n6tksPiRi9gVn01dipfMjzCd+gS3mg==
+
 next-offline@5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/next-offline/-/next-offline-5.0.2.tgz#54078e2626bcd4efeb674f5ac4d0b318e4d51b80"
