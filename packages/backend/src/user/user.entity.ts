@@ -1,7 +1,19 @@
 import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm'
 
+interface IUser {
+  id: string
+  displayName: string
+  iconImagePath: string
+  backgroundImagePath: string
+  profile?: string
+  email?: string
+  createdAt: Date
+  updatedAt: Date
+  deletedAt?: Date
+}
+
 @Entity({ name: 'users' })
-export class User {
+export class User implements IUser {
   @PrimaryColumn()
   id: string
 
@@ -28,4 +40,15 @@ export class User {
 
   @DeleteDateColumn({ name: 'deleted_at', type: 'timestamp' })
   readonly deletedAt?: Date
+
+  constructor(param: IUser) {
+    this.id = param.id
+    this.displayName = param.displayName
+    this.iconImagePath = param.iconImagePath
+    this.backgroundImagePath = param.backgroundImagePath
+    this.profile = param.profile
+    this.email = param.email
+    this.createdAt = param.createdAt
+    this.updatedAt = param.updatedAt
+  }
 }
