@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common'
-import { SignInRequest } from './user.request'
+import { Controller, Get, Post, Param, UseGuards } from '@nestjs/common'
 import { UserService } from './user.service'
+import { AuthGuard } from '../auth/auth.guard'
+import { AuthUser, IAuthUser } from '../auth/auth.decorator'
 
 @Controller('users')
 export class UserController {
@@ -11,10 +12,10 @@ export class UserController {
     return this.userService.getById(userId)
   }
 
-  @Post()
-  async signIn(@Body() signInRequestDto: SignInRequest) {
-    // eslint-disable-next-line no-console
-    console.log(signInRequestDto)
+  @Post('authorize')
+  @UseGuards(AuthGuard)
+  async signIn(@AuthUser() param: IAuthUser) {
+    console.log(param)
     return {
       accessToken: 'accessToken',
       refreshToken: 'refreshToken'
