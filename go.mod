@@ -48,6 +48,6 @@ require (
 	golang.org/x/net v0.0.0-20200904194848-62affa334b73
 	golang.org/x/text v0.3.3
 	google.golang.org/api v0.31.0
-	google.golang.org/grpc v1.31.1
+	google.golang.org/grpc v1.32.0
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
