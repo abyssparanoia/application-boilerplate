@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	cloud.google.com/go/firestore v1.1.1
-	firebase.google.com/go/v4 v4.0.0
+	firebase.google.com/go v3.13.0+incompatible
 	firebase.google.com/go/v4 v4.0.0
 	github.com/blendle/zapdriver v1.3.1
 	github.com/bxcodec/faker/v3 v3.5.0
@@ -20,6 +20,7 @@ require (
 	github.com/go-openapi/swag v0.19.9
 	github.com/go-openapi/validate v0.19.11
 	github.com/go-playground/universal-translator v0.17.0 // indirect
+	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-playground/validator/v10 v10.3.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/go-testfixtures/testfixtures/v3 v3.4.0
@@ -45,7 +46,7 @@ require (
 	github.com/volatiletech/sqlboiler/v4 v4.2.0
 	github.com/volatiletech/strmangle v0.0.1
 	go.uber.org/zap v1.16.0
-	golang.org/x/net v0.0.0-20200904194848-62affa334b73
+	golang.org/x/net v0.0.0-20200925080053-05aa5d4ee321
 	golang.org/x/text v0.3.3
 	google.golang.org/api v0.32.0
 	google.golang.org/grpc v1.32.0
