@@ -46,7 +46,7 @@ require (
 	github.com/volatiletech/sqlboiler/v4 v4.2.0
 	github.com/volatiletech/strmangle v0.0.1
 	go.uber.org/zap v1.16.0
-	golang.org/x/net v0.0.0-20200927032502-5d4f70055728
+	golang.org/x/net v0.0.0-20201002202402-0a1ea396d57c
 	golang.org/x/text v0.3.3
 	google.golang.org/api v0.32.0
 	google.golang.org/grpc v1.32.0
