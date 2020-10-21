@@ -261,6 +261,8 @@ github.com/go-testfixtures/testfixtures/v3 v3.3.0 h1:wCeFtfwle9Xoj4upskuQZLhvVCu
 github.com/go-testfixtures/testfixtures/v3 v3.3.0/go.mod h1:P4L3WxgOsCLbAeUC50qX5rdj1ULZfUMqgCbqah3OH5U=
 github.com/go-testfixtures/testfixtures/v3 v3.4.0 h1:cny44xqH4ctXRld/COxFGPC7XDyOU8KNnwmfCxEEqoQ=
 github.com/go-testfixtures/testfixtures/v3 v3.4.0/go.mod h1:P4L3WxgOsCLbAeUC50qX5rdj1ULZfUMqgCbqah3OH5U=
+github.com/go-testfixtures/testfixtures/v3 v3.4.1 h1:Qz9y0wUOXPHzKhK6C79A/menChtEu/xd0Dn5ngVyMD0=
+github.com/go-testfixtures/testfixtures/v3 v3.4.1/go.mod h1:P4L3WxgOsCLbAeUC50qX5rdj1ULZfUMqgCbqah3OH5U=
 github.com/gobuffalo/attrs v0.0.0-20190224210810-a9411de4debd/go.mod h1:4duuawTqi2wkkpB4ePgWMaai6/Kc6WEz83bhFwpHzj0=
 github.com/gobuffalo/depgen v0.0.0-20190329151759-d478694a28d3/go.mod h1:3STtPUQYuzV0gBVOY3vy6CfMm/ljR4pABfrTeHNLHUY=
 github.com/gobuffalo/depgen v0.1.0/go.mod h1:+ifsuy7fhi15RWncXQQKjWS9JPkdah5sZvtHc2RXGlg=
