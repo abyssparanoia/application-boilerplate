@@ -43,7 +43,7 @@ require (
 	github.com/unrolled/render v1.0.3
 	github.com/volatiletech/null/v8 v8.1.0
 	github.com/volatiletech/randomize v0.0.1
-	github.com/volatiletech/sqlboiler/v4 v4.2.0
+	github.com/volatiletech/sqlboiler/v4 v4.3.0
 	github.com/volatiletech/strmangle v0.0.1
 	go.uber.org/zap v1.16.0
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
