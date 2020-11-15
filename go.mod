@@ -49,6 +49,6 @@ require (
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
 	golang.org/x/text v0.3.4
 	google.golang.org/api v0.35.0
-	google.golang.org/grpc v1.33.1
+	google.golang.org/grpc v1.33.2
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
