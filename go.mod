@@ -11,7 +11,8 @@ require (
 	github.com/caarlos0/env/v6 v6.5.0
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/friendsofgo/errors v0.9.2
-	github.com/go-chi/chi v4.1.2+incompatible
+	github.com/go-chi/chi v1.5.4
+	github.com/go-chi/chi/v5 v5.0.1
 	github.com/go-openapi/errors v0.20.0
 	github.com/go-openapi/loads v0.20.2
 	github.com/go-openapi/runtime v0.19.26
@@ -20,7 +21,7 @@ require (
 	github.com/go-openapi/swag v0.19.14
 	github.com/go-openapi/validate v0.20.2
 	github.com/go-playground/universal-translator v0.17.0 // indirect
-	github.com/go-playground/validator/v10 v10.4.1
+	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-playground/validator/v10 v10.4.1
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/go-testfixtures/testfixtures/v3 v3.5.0
