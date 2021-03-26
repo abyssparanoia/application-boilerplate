@@ -50,6 +50,6 @@ require (
 	golang.org/x/net v0.0.0-20210324205630-d1beb07c2056
 	golang.org/x/text v0.3.5
 	google.golang.org/api v0.43.0
-	google.golang.org/grpc v1.36.0
+	google.golang.org/grpc v1.36.1
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
