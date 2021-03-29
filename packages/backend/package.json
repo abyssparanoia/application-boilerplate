@@ -26,7 +26,7 @@
     "class-transformer": "0.4.0",
     "class-validator": "0.13.1",
     "dotenv": "8.2.0",
-    "firebase-admin": "9.5.0",
+    "firebase-admin": "9.6.0",
     "mysql": "2.18.1",
     "nestjs-firebase": "1.0.2",
     "reflect-metadata": "0.1.13",
