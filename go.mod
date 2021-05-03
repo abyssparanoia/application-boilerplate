@@ -12,7 +12,7 @@ require (
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-chi/chi v1.5.4
-	github.com/go-chi/chi/v5 v5.0.2
+	github.com/go-chi/chi/v5 v5.0.3
 	github.com/go-openapi/errors v0.20.0
 	github.com/go-openapi/loads v0.20.2
 	github.com/go-openapi/runtime v0.19.28
