@@ -22,7 +22,7 @@
     "@nestjs/config": "1.0.1",
     "@nestjs/core": "7.6.18",
     "@nestjs/platform-express": "7.6.18",
-    "@nestjs/typeorm": "7.1.5",
+    "@nestjs/typeorm": "8.0.1",
     "class-transformer": "0.4.0",
     "class-validator": "0.13.1",
     "dotenv": "9.0.2",
