@@ -46,7 +46,7 @@ require (
 	github.com/volatiletech/strmangle v0.0.1
 	go.uber.org/tools v0.0.0-20190618225709-2cfd321de3ee // indirect
 	go.uber.org/zap v1.19.0
-	golang.org/x/net v0.0.0-20210805182204-aaa1db679c0d
+	golang.org/x/net v0.0.0-20210813160813-60bc85c4be6d
 	golang.org/x/text v0.3.7
 	google.golang.org/api v0.53.0
 	google.golang.org/grpc v1.39.1
