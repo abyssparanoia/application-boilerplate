@@ -42,7 +42,7 @@
     "@types/styled-components": "5.1.14",
     "@types/ua-parser-js": "0.7.36",
     "babel-loader": "8.2.2",
-    "babel-plugin-styled-components": "1.13.2",
+    "babel-plugin-styled-components": "1.13.3",
     "react-docgen-typescript-loader": "3.7.2"
   }
 }
