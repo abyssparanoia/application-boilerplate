@@ -3,7 +3,7 @@ module github.com/abyssparanoia/application-boilerplate
 go 1.14
 
 require (
-	cloud.google.com/go/firestore v1.6.0
+	cloud.google.com/go/firestore v1.6.1
 	firebase.google.com/go v3.13.0+incompatible
 	firebase.google.com/go/v4 v4.6.0
 	github.com/blendle/zapdriver v1.3.1
