@@ -39,7 +39,7 @@ require (
 	github.com/spf13/viper v1.9.0
 	github.com/uber/jaeger-client-go v2.29.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
-	github.com/unrolled/render v1.4.0
+	github.com/unrolled/render v1.4.1
 	github.com/volatiletech/null/v8 v8.1.2
 	github.com/volatiletech/randomize v0.0.1
 	github.com/volatiletech/sqlboiler/v4 v4.7.1
