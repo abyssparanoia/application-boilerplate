@@ -7,6 +7,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	firebase.google.com/go/v4 v4.7.0
 	github.com/blendle/zapdriver v1.3.1
+	github.com/bxcodec/faker v2.0.1+incompatible
 	github.com/bxcodec/faker/v3 v3.7.0
 	github.com/caarlos0/env/v6 v6.7.1
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
@@ -45,7 +46,7 @@ require (
 	github.com/volatiletech/sqlboiler/v4 v4.8.3
 	github.com/volatiletech/strmangle v0.0.1
 	go.uber.org/tools v0.0.0-20190618225709-2cfd321de3ee // indirect
-	go.uber.org/zap v1.19.1
+	go.uber.org/zap v1.21.0
 	golang.org/x/net v0.0.0-20211020060615-d418f374d309
 	golang.org/x/text v0.3.7
 	google.golang.org/api v0.63.0
