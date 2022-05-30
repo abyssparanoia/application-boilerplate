@@ -9,7 +9,7 @@ require (
 	github.com/blendle/zapdriver v1.3.1
 	github.com/bxcodec/faker v2.0.1+incompatible
 	github.com/bxcodec/faker/v3 v3.7.0
-	github.com/caarlos0/env/v6 v6.7.1
+	github.com/caarlos0/env/v6 v6.9.3
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-chi/chi v1.5.4
