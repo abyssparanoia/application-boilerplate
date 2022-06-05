@@ -21,7 +21,7 @@
     "firebase": "8.10.1",
     "firebase-admin": "10.0.2",
     "moment": "2.29.3",
-    "next": "10.2.3",
+    "next": "12.1.0",
     "next-offline": "5.0.5",
     "nookies": "2.5.2",
     "path": "0.12.7",
