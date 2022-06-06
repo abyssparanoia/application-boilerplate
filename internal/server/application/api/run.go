@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/abyssparanoia/application-boilerplate/internal/pkg/log"
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/logger"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/application/shared"
 	"go.uber.org/zap"
 
@@ -24,10 +24,7 @@ func Run() {
 		panic(err)
 	}
 
-	logger, err := log.New(e.Envrionment)
-	if err != nil {
-		panic(err)
-	}
+	logger := logger.New()
 
 	// Dependency
 	d := Dependency{}
@@ -61,7 +58,7 @@ func Run() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	err = server.Shutdown(ctx)
+	err := server.Shutdown(ctx)
 	if err != nil {
 		logger.Error("failed to gracefully shutdown", zap.Error(err))
 	}
