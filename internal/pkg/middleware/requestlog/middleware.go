@@ -1,10 +1,12 @@
 package requestlog
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
 	"github.com/abyssparanoia/application-boilerplate/internal/pkg/error/httperror"
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/renderer"
 
 	"github.com/blendle/zapdriver"
 	"github.com/google/uuid"
@@ -26,8 +28,6 @@ func (m *HTTPMiddleware) Handle(next http.Handler) http.Handler {
 
 		operationID := uuid.New()
 
-		m.logger.Info("call start", zapdriver.OperationStart(operationID.String(), producerID))
-
 		ctx := r.Context()
 		ctx = ctxzap.ToContext(ctx, m.logger.With(
 			zapdriver.OperationCont(operationID.String(), producerID),
@@ -35,6 +35,20 @@ func (m *HTTPMiddleware) Handle(next http.Handler) http.Handler {
 
 		defer func() {
 			if rcvr := recover(); rcvr != nil {
+				latency := time.Since(start)
+				zapcoreLevel := httperror.CodeToLevel(http.StatusInternalServerError)
+				renderer.Text(ctx, w, http.StatusInternalServerError, "Internal Error")
+				ctxzap.Extract(ctx).Check(zapcoreLevel, fmt.Sprintf("%s %s -> %d", r.Method, r.RequestURI, http.StatusInternalServerError)).Write(
+					zap.Reflect("error", rcvr),
+					zap.Int("status", http.StatusInternalServerError),
+					zap.Int("content-length", 0),
+					zap.Duration("took", latency),
+					zap.Int64("latency", latency.Nanoseconds()),
+					zap.String("remote", r.RemoteAddr),
+					zap.String("request", r.RequestURI),
+					zap.String("method", r.Method),
+					zap.String("operation-id", operationID.String()),
+					zapdriver.OperationEnd(operationID.String(), producerID))
 			}
 		}()
 
@@ -44,7 +58,7 @@ func (m *HTTPMiddleware) Handle(next http.Handler) http.Handler {
 
 		latency := time.Since(start)
 		zapcoreLevel := httperror.CodeToLevel(sw.status)
-		ctxzap.Extract(ctx).Check(zapcoreLevel, "call end").Write(
+		ctxzap.Extract(ctx).Check(zapcoreLevel, fmt.Sprintf("%s %s -> %d", r.Method, r.RequestURI, sw.status)).Write(
 			zap.Int("status", sw.status),
 			zap.Int("content-length", sw.length),
 			zap.Duration("took", latency),
@@ -52,6 +66,7 @@ func (m *HTTPMiddleware) Handle(next http.Handler) http.Handler {
 			zap.String("remote", r.RemoteAddr),
 			zap.String("request", r.RequestURI),
 			zap.String("method", r.Method),
+			zap.String("operation-id", operationID.String()),
 			zapdriver.OperationEnd(operationID.String(), producerID))
 	})
 }
