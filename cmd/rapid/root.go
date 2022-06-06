@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/abyssparanoia/application-boilerplate/cmd/rapid/server"
 	"github.com/spf13/cobra"
 )
 
@@ -19,7 +18,7 @@ func newCmdRoot() *cobra.Command {
 			}
 		},
 	}
-	cmd.AddCommand(server.NewServerCmd())
+	cmd.AddCommand(NewServerCmd())
 	return cmd
 }
 
