@@ -1,6 +1,6 @@
-package server
+package shared
 
-type environment struct {
+type Environment struct {
 	Port            string `env:"PORT,required"`
 	Envrionment     string `env:"ENV,required"`
 	ProjectID       string `env:"PROJECT_ID,required"`

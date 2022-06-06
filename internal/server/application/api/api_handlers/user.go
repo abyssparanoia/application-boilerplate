@@ -1,4 +1,4 @@
-package api
+package api_handlers
 
 import (
 	"net/http"

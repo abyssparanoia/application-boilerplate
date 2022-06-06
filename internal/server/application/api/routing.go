@@ -1,10 +1,10 @@
-package server
+package api
 
 import (
 	"net/http"
 
 	"github.com/abyssparanoia/application-boilerplate/internal/pkg/accesscontrol"
-	"github.com/abyssparanoia/application-boilerplate/internal/server/handler"
+	"github.com/abyssparanoia/application-boilerplate/internal/server/application/api/api_handlers"
 	"github.com/go-chi/chi"
 )
 
@@ -19,15 +19,14 @@ func Routing(r chi.Router, d Dependency) {
 
 	// need to authenticate for production
 	r.Route("/v1", func(r chi.Router) {
-		r.With(d.gluefirebaseauth.Handle).Route("/users", func(r chi.Router) {
-			//r.Post("/", d.UserHandler.Create)
-			r.Get("/{userID}", d.UserHandler.Get)
+		r.With(d.authenticationMiddleware.Handle).Route("/users", func(r chi.Router) {
+			r.Get("/{userID}", d.userHandler.Get)
 		})
 	})
 
 	// Ping
-	r.Get("/ping", handler.Ping)
-	r.Get("/", handler.Ping)
+	r.Get("/ping", api_handlers.Ping)
+	r.Get("/", api_handlers.Ping)
 
 	http.Handle("/", r)
 }

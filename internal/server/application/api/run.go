@@ -1,4 +1,4 @@
-package server
+package api
 
 import (
 	"context"
@@ -10,15 +10,16 @@ import (
 	"time"
 
 	"github.com/abyssparanoia/application-boilerplate/internal/pkg/log"
+	"github.com/abyssparanoia/application-boilerplate/internal/server/application/shared"
 	"go.uber.org/zap"
 
 	"github.com/caarlos0/env/v6"
 	"github.com/go-chi/chi"
 )
 
-func run() {
+func Run() {
 
-	e := &environment{}
+	e := &shared.Environment{}
 	if err := env.Parse(e); err != nil {
 		panic(err)
 	}

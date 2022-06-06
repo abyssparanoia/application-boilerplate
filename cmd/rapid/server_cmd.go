@@ -1,6 +1,7 @@
-package server
+package main
 
 import (
+	"github.com/abyssparanoia/application-boilerplate/internal/server/application/api"
 	"github.com/spf13/cobra"
 )
 
@@ -15,17 +16,12 @@ func NewServerCmd() *cobra.Command {
 			}
 		},
 	}
-	cmd.AddCommand(newServerRunCmd())
-	return cmd
-}
-
-func newServerRunCmd() *cobra.Command {
-	cmd := &cobra.Command{
+	cmd.AddCommand(&cobra.Command{
 		Use:   "run",
 		Short: "running http server",
 		Run: func(cmd *cobra.Command, args []string) {
-			run()
+			api.Run()
 		},
-	}
+	})
 	return cmd
 }
