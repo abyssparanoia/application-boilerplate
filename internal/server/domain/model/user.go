@@ -8,8 +8,8 @@ type User struct {
 	DisplayName         string    `json:"display_name"`
 	IconImagePath       string    `json:"icon_image_path"`
 	BackgroundImagePath string    `json:"background_image_path"`
-	Profile             *string   `json:"profile"`
-	Email               *string   `json:"email"`
+	Profile             string    `json:"profile"`
+	Email               string    `json:"email"`
 	CreatedAt           time.Time `json:"created_at"`
 	UpdatedAt           time.Time `json:"updated_at"`
 }
@@ -33,8 +33,8 @@ func NewUser(
 		DisplayName:         displayName,
 		IconImagePath:       iconImagePath,
 		BackgroundImagePath: backgroundImagePath,
-		Profile:             &profile,
-		Email:               &email,
+		Profile:             profile,
+		Email:               email,
 		CreatedAt:           time.Time{},
 		UpdatedAt:           time.Time{},
 	}

@@ -3,10 +3,5 @@
 
 package defaultdb
 
-var TableNames = struct {
-	GooseDBVersion string
-	Users          string
-}{
-	GooseDBVersion: "goose_db_version",
-	Users:          "users",
-}
+var ViewNames = struct {
+}{}

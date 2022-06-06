@@ -3,7 +3,6 @@ package entity
 import (
 	"github.com/abyssparanoia/application-boilerplate/internal/dbmodels/defaultdb"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/model"
-	"github.com/volatiletech/null/v8"
 )
 
 // User ... user entity
@@ -18,8 +17,8 @@ func (e *User) OutputModel() *model.User {
 		DisplayName:         e.DisplayName,
 		IconImagePath:       e.IconImagePath,
 		BackgroundImagePath: e.BackgroundImagePath,
-		Profile:             e.Profile.Ptr(),
-		Email:               e.Email.Ptr(),
+		Profile:             e.Profile,
+		Email:               e.Email,
 		CreatedAt:           e.CreatedAt,
 		UpdatedAt:           e.UpdatedAt,
 	}
@@ -32,8 +31,8 @@ func NewUserFromModel(m *model.User) *User {
 	e.DisplayName = m.DisplayName
 	e.IconImagePath = m.IconImagePath
 	e.BackgroundImagePath = m.BackgroundImagePath
-	e.Profile = null.StringFromPtr(m.Profile)
-	e.Email = null.StringFromPtr(m.Email)
+	e.Profile = m.Profile
+	e.Email = m.Email
 	e.CreatedAt = m.CreatedAt
 	e.UpdatedAt = m.UpdatedAt
 	return e
