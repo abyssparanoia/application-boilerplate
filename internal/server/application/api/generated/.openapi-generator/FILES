@@ -1,0 +1,10 @@
+api/openapi.yaml
+openapi/api.go
+openapi/api_default.go
+openapi/api_default_service.go
+openapi/error.go
+openapi/helpers.go
+openapi/impl.go
+openapi/logger.go
+openapi/model_user.go
+openapi/routers.go
