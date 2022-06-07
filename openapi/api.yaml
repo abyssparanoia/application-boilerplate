@@ -10,7 +10,7 @@ paths:
   '/users/{userId}':
     parameters:
       - schema:
-          type: integer
+          type: string
         name: userId
         in: path
         required: true
@@ -24,17 +24,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                Get User Alice Smith:
-                  value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
+                type: object
+                title: GetUserResponse
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+                required:
+                  - user
         '404':
           description: User Not Found
       operationId: get-users-userId
@@ -74,4 +70,3 @@ components:
         - email
         - created_at
         - updated_at
-
