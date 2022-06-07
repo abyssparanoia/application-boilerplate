@@ -6,5 +6,6 @@ openapi/error.go
 openapi/helpers.go
 openapi/impl.go
 openapi/logger.go
+openapi/model_get_user_response.go
 openapi/model_user.go
 openapi/routers.go
