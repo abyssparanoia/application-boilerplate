@@ -11,8 +11,8 @@ package openapi
 
 import (
 	"context"
-	"net/http"
 	"errors"
+	"net/http"
 )
 
 // DefaultApiService is a service that implements the logic for the DefaultApiServicer
@@ -27,12 +27,12 @@ func NewDefaultApiService() DefaultApiServicer {
 }
 
 // GetUsersUserId - Get User Info by User ID
-func (s *DefaultApiService) GetUsersUserId(ctx context.Context, userId int32) (ImplResponse, error) {
+func (s *DefaultApiService) GetUsersUserId(ctx context.Context, userId string) (ImplResponse, error) {
 	// TODO - update GetUsersUserId with the required logic for this service method.
 	// Add api_default_service.go to the .openapi-generator-ignore to avoid overwriting this service implementation when updating open api generation.
 
-	//TODO: Uncomment the next line to return response Response(200, User{}) or use other options such as http.Ok ...
-	//return Response(200, User{}), nil
+	//TODO: Uncomment the next line to return response Response(200, GetUserResponse{}) or use other options such as http.Ok ...
+	//return Response(200, GetUserResponse{}), nil
 
 	//TODO: Uncomment the next line to return response Response(404, {}) or use other options such as http.Ok ...
 	//return Response(404, nil),nil
