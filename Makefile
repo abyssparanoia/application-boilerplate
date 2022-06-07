@@ -33,9 +33,8 @@ sqlboiler:
 		--templates ${GOPATH}/pkg/mod/github.com/volatiletech/sqlboiler/v4@v4.11.0/templates/main
 	$(call format)
 
-swaggergen:
-	./bin/swagger generate server -f ./swagger/reference/api.v1.yaml -s restapi -m restapi/restmodels -t ./internal
-	rm -rf ./internal/cmd
+openapi-gen:
+	docker-compose -f docker-compose.openapi.yml up
 	$(call format)
 
 GOOSE_FILE_NAME=something
