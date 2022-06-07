@@ -10,7 +10,6 @@
 package openapi
 
 type User struct {
-
 	Id string `json:"id"`
 
 	DisplayName string `json:"display_name"`
@@ -33,14 +32,14 @@ type User struct {
 // AssertUserRequired checks if the required fields are not zero-ed
 func AssertUserRequired(obj User) error {
 	elements := map[string]interface{}{
-		"id": obj.Id,
-		"display_name": obj.DisplayName,
-		"iconImagePath": obj.IconImagePath,
+		"id":                  obj.Id,
+		"display_name":        obj.DisplayName,
+		"iconImagePath":       obj.IconImagePath,
 		"backgroundImagePath": obj.BackgroundImagePath,
-		"profile": obj.Profile,
-		"email": obj.Email,
-		"created_at": obj.CreatedAt,
-		"updated_at": obj.UpdatedAt,
+		"profile":             obj.Profile,
+		"email":               obj.Email,
+		"created_at":          obj.CreatedAt,
+		"updated_at":          obj.UpdatedAt,
 	}
 	for name, el := range elements {
 		if isZero := IsZeroValue(el); isZero {
