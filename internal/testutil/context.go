@@ -3,7 +3,7 @@ package testutil
 import (
 	"context"
 
-	"github.com/abyssparanoia/application-boilerplate/internal/pkg/log"
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/logger"
 	"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap"
 )
 
@@ -12,7 +12,7 @@ var (
 )
 
 func init() {
-	logger, _ := log.New("test")
+	logger := logger.New()
 	testCtx = ctxzap.ToContext(context.Background(), logger)
 }
 
