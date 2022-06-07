@@ -29,3 +29,4 @@ go.mod
 go.sum
 api/api_*_service.go
 api/error.go
+api
