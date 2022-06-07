@@ -61,11 +61,7 @@ func (c *DefaultApiController) Routes() Routes {
 // GetUsersUserId - Get User Info by User ID
 func (c *DefaultApiController) GetUsersUserId(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	userIdParam, err := parseInt32Parameter(params["userId"], true)
-	if err != nil {
-		c.errorHandler(w, r, &ParsingError{Err: err}, nil)
-		return
-	}
+	userIdParam := params["userId"]
 
 	result, err := c.service.GetUsersUserId(r.Context(), userIdParam)
 	// If an error occurred, encode the error with the status code
