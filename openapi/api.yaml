@@ -1,0 +1,77 @@
+openapi: 3.0.0
+x-stoplight:
+  id: 6km5rau3tev5g
+info:
+  title: api
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/users/{userId}':
+    parameters:
+      - schema:
+          type: integer
+        name: userId
+        in: path
+        required: true
+        description: Id of an existing user.
+    get:
+      summary: Get User Info by User ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-users-userId
+      description: Retrieve the information of the user with the matching user ID.
+components:
+  schemas:
+    User:
+      title: User
+      x-stoplight:
+        id: dzs7bc8277r6i
+      type: object
+      properties:
+        id:
+          type: string
+        display_name:
+          type: string
+        iconImagePath:
+          type: string
+        backgroundImagePath:
+          type: string
+        profile:
+          type: string
+        email:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        deleted_at:
+          type: string
+      required:
+        - id
+        - display_name
+        - iconImagePath
+        - backgroundImagePath
+        - profile
+        - email
+        - created_at
+        - updated_at
+
