@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/glueerr"
 	"github.com/abyssparanoia/application-boilerplate/internal/pkg/renderer"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/model"
-	"github.com/abyssparanoia/application-boilerplate/internal/server/pkg/server_error"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/usecase"
 )
 
@@ -43,13 +43,13 @@ func (m *Authentication) Handle(next http.Handler) http.Handler {
 		ah := r.Header.Get("Authorization")
 		token := getTokenByAuthHeader(ah)
 		if token == "" {
-			renderer.HandleError(ctx, w, server_error.UnauthorizedErr.Errorf("No Authorization Header"))
+			renderer.HandleError(ctx, w, glueerr.UnauthorizedErr.Errorf("No Authorization Header"))
 			return
 		}
 
 		authUserInfo, err := m.uAuthentication.Verify(ctx, token)
 		if err != nil {
-			renderer.HandleError(ctx, w, server_error.UnauthorizedErr.Wrap(err))
+			renderer.HandleError(ctx, w, glueerr.UnauthorizedErr.Wrap(err))
 			return
 		}
 		ctx = SetAuthUserInfo(ctx, authUserInfo)
