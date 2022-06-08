@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/abyssparanoia/application-boilerplate/internal/pkg/error/httperror"
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/glueerr"
 	"github.com/abyssparanoia/application-boilerplate/internal/pkg/renderer"
 
 	"github.com/blendle/zapdriver"
@@ -36,7 +36,7 @@ func (m *HTTPMiddleware) Handle(next http.Handler) http.Handler {
 		defer func() {
 			if rcvr := recover(); rcvr != nil {
 				latency := time.Since(start)
-				zapcoreLevel := httperror.CodeToLevel(http.StatusInternalServerError)
+				zapcoreLevel := glueerr.CodeToLevel(http.StatusInternalServerError)
 				renderer.Text(ctx, w, http.StatusInternalServerError, "Internal Error")
 				ctxzap.Extract(ctx).Check(zapcoreLevel, fmt.Sprintf("%s %s -> %d", r.Method, r.RequestURI, http.StatusInternalServerError)).Write(
 					zap.Reflect("error", rcvr),
@@ -57,7 +57,7 @@ func (m *HTTPMiddleware) Handle(next http.Handler) http.Handler {
 		next.ServeHTTP(sw, r.WithContext(ctx))
 
 		latency := time.Since(start)
-		zapcoreLevel := httperror.CodeToLevel(sw.status)
+		zapcoreLevel := glueerr.CodeToLevel(sw.status)
 		ctxzap.Extract(ctx).Check(zapcoreLevel, fmt.Sprintf("%s %s -> %d", r.Method, r.RequestURI, sw.status)).Write(
 			zap.Int("status", sw.status),
 			zap.Int("content-length", sw.length),
