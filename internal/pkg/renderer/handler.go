@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/glueerr"
 	"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap"
 	"go.uber.org/zap"
 
-	"github.com/abyssparanoia/application-boilerplate/internal/pkg/error/httperror"
 	"github.com/unrolled/render"
 	"golang.org/x/text/encoding/japanese"
 	"golang.org/x/text/transform"
@@ -17,7 +17,7 @@ import (
 
 // HandleError ... handle http error
 func HandleError(ctx context.Context, w http.ResponseWriter, err error) {
-	statusCode := httperror.ErrToCode(err)
+	statusCode := glueerr.ErrToCode(err)
 	ctxzap.AddFields(ctx, zap.Error(err))
 	Error(ctx, w, statusCode, err.Error())
 }
