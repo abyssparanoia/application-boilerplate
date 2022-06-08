@@ -1,0 +1,4 @@
+# see: https://openapi-generator.tech/docs/generators/go-server/
+
+packageName: test_data
+sourceFolder: test_data

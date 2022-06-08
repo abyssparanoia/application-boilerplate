@@ -1,4 +1,4 @@
-package httperror
+package glueerr
 
 import (
 	"net/http"

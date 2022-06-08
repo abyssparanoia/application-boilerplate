@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+  go:
+    image: openapitools/openapi-generator-cli:v5.4.0
+    volumes:
+      - .:/work
+    working_dir: /work
+    command: generate -i /work/openapi/api.yaml --generator-name go-server --input-spec /work/openapi/api.yaml --config /work/openapi/openapi_generator_config.yaml --output /work/internal/server/application/api/generated
