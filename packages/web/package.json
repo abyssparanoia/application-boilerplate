@@ -18,7 +18,7 @@
     "date-fns": "2.28.0",
     "express": "4.17.3",
     "faker": "5.5.3",
-    "firebase": "8.10.1",
+    "firebase": "9.8.3",
     "firebase-admin": "10.0.2",
     "moment": "2.29.3",
     "next": "10.2.3",
