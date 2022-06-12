@@ -2,63 +2,94 @@ package test
 
 import (
 	"context"
+	"testing"
+	"time"
 
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/glueerr"
+	"github.com/abyssparanoia/application-boilerplate/internal/pkg/now"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/model"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/model/testdata"
-	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/repository"
-	repository_impl "github.com/abyssparanoia/application-boilerplate/internal/server/infrastructure/repository"
+	mock_repository "github.com/abyssparanoia/application-boilerplate/internal/server/domain/repository/mock"
 	"github.com/abyssparanoia/application-boilerplate/internal/server/usecase"
-	"github.com/abyssparanoia/application-boilerplate/internal/testutil"
 	"github.com/golang/mock/gomock"
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
+	"github.com/stretchr/testify/assert"
 )
 
-var _ = Describe("User", func() {
+func TestUsecaseUser_Get(t *testing.T) {
+	now.FakeNow(time.Date(2020, 05, 01, 10, 0, 0, 0, time.UTC))
 
-	var ctx context.Context
-	var mockCtrl *gomock.Controller
-	var userRepository repository.User
+	td := testdata.NewDomainModel()
+	user := td.User
 
-	BeforeEach(func() {
-		mockCtrl = gomock.NewController(GinkgoT())
-	})
+	type args struct {
+		id string
+	}
 
-	AfterEach(func() {
-		mockCtrl.Finish()
-	})
+	type want struct {
+		user           *model.User
+		expectedResult error
+	}
 
-	var _ = Describe("Get", func() {
+	tests := map[string]struct {
+		args    args
+		usecase func(ctx context.Context, ctrl *gomock.Controller) usecase.User
+		want    want
+	}{
+		"success": {
+			args: args{
+				id: user.ID,
+			},
+			usecase: func(ctx context.Context, ctrl *gomock.Controller) usecase.User {
+				mockUserRepo := mock_repository.NewMockUser(ctrl)
+				mockUserRepo.
+					EXPECT().
+					Get(ctx, user.ID).
+					Return(user, nil)
 
-		var user *model.User
+				return usecase.NewUser(
+					mockUserRepo,
+				)
+			},
+			want: want{
+				user: user,
+			},
+		},
+		"not found": {
+			args: args{
+				id: user.ID,
+			},
+			usecase: func(ctx context.Context, ctrl *gomock.Controller) usecase.User {
+				mockUserRepo := mock_repository.NewMockUser(ctrl)
+				mockUserRepo.
+					EXPECT().
+					Get(ctx, user.ID).
+					Return(nil, glueerr.NotFoundErr.New())
 
-		var prepareData = func() {
-			ctx = testutil.Context()
-			td := testdata.NewDomainModel()
-			user = td.User
-		}
+				return usecase.NewUser(
+					mockUserRepo,
+				)
+			},
+			want: want{
+				expectedResult: glueerr.NotFoundErr.New(),
+			},
+		},
+	}
 
-		var prepareRepositories = func() {
-			userRepository = repository_impl.NewUser()
-			_, err := userRepository.Create(ctx, user)
-			Expect(err).To(BeNil())
-		}
+	for testName, arg := range tests {
+		t.Run(testName, func(t *testing.T) {
+			ctx := context.Background()
+			ctrl := gomock.NewController(t)
+			defer ctrl.Finish()
 
-		BeforeEach(func() {
-			prepareData()
-			prepareRepositories()
+			u := arg.usecase(ctx, ctrl)
+
+			got, err := u.Get(ctx, arg.args.id)
+			if arg.want.expectedResult == nil {
+				assert.NoError(t, err)
+				assert.Equal(t, user, got)
+			} else {
+				assert.ErrorContains(t, err, arg.want.expectedResult.Error())
+			}
 		})
-
-		var subject = func() usecase.User {
-			return usecase.NewUser(userRepository)
-		}
-
-		It("success: get correct user data", func() {
-			out, err := subject().Get(ctx, user.ID)
-			Expect(err).To(BeNil())
-			Expect(out.DisplayName).To(Equal(user.DisplayName))
-			Expect(out.Email).To(Equal(user.Email))
-		})
-	})
-
-})
+	}
+}
