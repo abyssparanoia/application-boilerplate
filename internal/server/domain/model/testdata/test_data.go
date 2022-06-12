@@ -9,7 +9,8 @@ import (
 
 // NewDomainModel :
 func NewDomainModel() *struct {
-	User *model.User
+	User         *model.User
+	AuthUserInfo *model.AuthUserInfo
 } {
 
 	user := &model.User{}
@@ -20,9 +21,15 @@ func NewDomainModel() *struct {
 	user.CreatedAt = time.Time{}
 	user.UpdatedAt = time.Time{}
 
+	authUserInfo := &model.AuthUserInfo{}
+	authUserInfo.UserID = user.ID
+	authUserInfo.Claims = &model.Claims{}
+
 	return &struct {
-		User *model.User
+		User         *model.User
+		AuthUserInfo *model.AuthUserInfo
 	}{
-		User: user,
+		User:         user,
+		AuthUserInfo: authUserInfo,
 	}
 }
