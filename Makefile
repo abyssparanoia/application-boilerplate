@@ -19,7 +19,7 @@ test:
 	go test `go list ./... | grep -v internal/dbmodels`
 
 generate:
-	go generate ./internal/...
+	go generate ./internal/server/...
 
 sqlboiler:
 	./bin/sqlboiler mysql \
