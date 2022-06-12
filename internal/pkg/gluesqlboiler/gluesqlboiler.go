@@ -20,7 +20,7 @@ func GetContextExecutor(ctx context.Context) boil.ContextExecutor {
 }
 
 // RunTx :
-func RunTx(ctx context.Context, fn func(context.Context, *sql.Tx) error) error {
+var RunTx = func(ctx context.Context, fn func(context.Context) error) error {
 	db, ok := GetContextExecutor(ctx).(boil.ContextBeginner)
 	if !ok {
 		panic("The database in the context does not support boil.ContextBeginner")
@@ -29,7 +29,7 @@ func RunTx(ctx context.Context, fn func(context.Context, *sql.Tx) error) error {
 }
 
 // RunTxWithDB :
-func RunTxWithDB(ctx context.Context, db boil.ContextBeginner, fn func(context.Context, *sql.Tx) error) error {
+func RunTxWithDB(ctx context.Context, db boil.ContextBeginner, fn func(context.Context) error) error {
 	tx, err := db.BeginTx(ctx, nil)
 	if err != nil {
 		return err
@@ -42,7 +42,7 @@ func RunTxWithDB(ctx context.Context, db boil.ContextBeginner, fn func(context.C
 	}()
 
 	ctxWithTx := context.WithValue(ctx, &ctxTxKey, tx)
-	if err := fn(ctxWithTx, tx); err != nil {
+	if err := fn(ctxWithTx); err != nil {
 		tx.Rollback()
 		return err
 	}
