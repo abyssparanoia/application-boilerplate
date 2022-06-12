@@ -6,7 +6,7 @@ import (
 	"github.com/abyssparanoia/application-boilerplate/internal/server/domain/model"
 )
 
-// User ... user interface
+//go:generate mockgen -source user.go -destination mock/mock_user.go
 type User interface {
 	Get(
 		ctx context.Context,
