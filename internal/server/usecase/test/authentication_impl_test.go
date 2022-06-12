@@ -15,62 +15,62 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestUsecaseUser_Get(t *testing.T) {
+func TestUsecaseAuthentication_VerifyIDToken(t *testing.T) {
 	now.FakeNow(time.Date(2020, 05, 01, 10, 0, 0, 0, time.UTC))
 
 	td := testdata.NewDomainModel()
-	user := td.User
+	authUserInfo := td.AuthUserInfo
 
 	type args struct {
-		id string
+		idToken string
 	}
 
 	type want struct {
-		user           *model.User
+		authUserInfo   *model.AuthUserInfo
 		expectedResult error
 	}
 
 	tests := map[string]struct {
 		args    args
-		usecase func(ctx context.Context, ctrl *gomock.Controller) usecase.User
+		usecase func(ctx context.Context, ctrl *gomock.Controller) usecase.Authentication
 		want    want
 	}{
 		"success": {
 			args: args{
-				id: user.ID,
+				idToken: "idToken",
 			},
-			usecase: func(ctx context.Context, ctrl *gomock.Controller) usecase.User {
-				mockUserRepo := mock_repository.NewMockUser(ctrl)
-				mockUserRepo.
+			usecase: func(ctx context.Context, ctrl *gomock.Controller) usecase.Authentication {
+				mockAuthRepo := mock_repository.NewMockAuthentication(ctrl)
+				mockAuthRepo.
 					EXPECT().
-					Get(ctx, user.ID).
-					Return(user, nil)
+					VerifyIDToken(ctx, "idToken").
+					Return(authUserInfo, nil)
 
-				return usecase.NewUser(
-					mockUserRepo,
+				return usecase.NewAuthentication(
+					mockAuthRepo,
 				)
 			},
 			want: want{
-				user: user,
+				authUserInfo: authUserInfo,
 			},
 		},
-		"not found": {
+		"failed": {
 			args: args{
-				id: user.ID,
+				idToken: "idToken",
 			},
-			usecase: func(ctx context.Context, ctrl *gomock.Controller) usecase.User {
-				mockUserRepo := mock_repository.NewMockUser(ctrl)
-				mockUserRepo.
+			usecase: func(ctx context.Context, ctrl *gomock.Controller) usecase.Authentication {
+				mockAuthRepo := mock_repository.NewMockAuthentication(ctrl)
+				mockAuthRepo.
 					EXPECT().
-					Get(ctx, user.ID).
-					Return(nil, glueerr.NotFoundErr.New())
+					VerifyIDToken(ctx, "idToken").
+					Return(nil, glueerr.InternalErr.New())
 
-				return usecase.NewUser(
-					mockUserRepo,
+				return usecase.NewAuthentication(
+					mockAuthRepo,
 				)
 			},
 			want: want{
-				expectedResult: glueerr.NotFoundErr.New(),
+				expectedResult: glueerr.InternalErr.New(),
 			},
 		},
 	}
@@ -83,10 +83,10 @@ func TestUsecaseUser_Get(t *testing.T) {
 
 			u := arg.usecase(ctx, ctrl)
 
-			got, err := u.Get(ctx, arg.args.id)
+			got, err := u.Verify(ctx, arg.args.idToken)
 			if arg.want.expectedResult == nil {
 				assert.NoError(t, err)
-				assert.Equal(t, user, got)
+				assert.Equal(t, authUserInfo, got)
 			} else {
 				assert.ErrorContains(t, err, arg.want.expectedResult.Error())
 			}
