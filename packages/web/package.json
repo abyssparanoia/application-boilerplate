@@ -4,8 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev": "nodemon --ext ts --watch src",
-    "start:prod": "NODE_ENV=production node dist/src/server.js",
+    "start:dev": "next dev",
+    "start:prod": "next start",
     "build": "run-p -l build:*",
     "build:next": "next build",
     "build:server": "tsc -b ./src/tsconfig.server.json"
