@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSignIn } from '@boilerplate/fixtures'
+import { useSignIn } from 'src/modules/auth/hooks'
 
 type InitialProps = {}
 
