@@ -19,7 +19,7 @@
     "express": "4.17.3",
     "faker": "5.5.3",
     "firebase": "9.8.3",
-    "firebase-admin": "10.0.2",
+    "firebase-admin": "10.3.0",
     "moment": "2.29.3",
     "next": "12.1.6",
     "next-offline": "5.0.5",
