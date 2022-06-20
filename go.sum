@@ -304,6 +304,8 @@ github.com/go-stack/stack v1.8.1/go.mod h1:dcoOX6HbPZSZptuspn9bctJ+N/CnF5gGygcUP
 github.com/go-task/slim-sprig v0.0.0-20210107165309-348f09dbbbc0/go.mod h1:fyg7847qk6SyHyPtNmDHnmrv/HOrqktSC+C9fM+CJOE=
 github.com/go-testfixtures/testfixtures/v3 v3.6.1 h1:n4Fv95Exp0D05G6l6CAZv22Ck1EJK0pa0TfPqE4ncSs=
 github.com/go-testfixtures/testfixtures/v3 v3.6.1/go.mod h1:Bsb2MoHAfHnNsPpSwAjtOs102mqDuM+1u3nE2OCi0N0=
+github.com/go-testfixtures/testfixtures/v3 v3.7.0 h1:NdOJhGqDC+G15lb6tI/Bm9UYW1boFIHtScqh9hdMN+A=
+github.com/go-testfixtures/testfixtures/v3 v3.7.0/go.mod h1:TgqLoLUYI3LsvFNqQ7bxg5xIgH9MH/IsoXrXo4w5n+8=
 github.com/gobuffalo/attrs v0.0.0-20190224210810-a9411de4debd/go.mod h1:4duuawTqi2wkkpB4ePgWMaai6/Kc6WEz83bhFwpHzj0=
 github.com/gobuffalo/depgen v0.0.0-20190329151759-d478694a28d3/go.mod h1:3STtPUQYuzV0gBVOY3vy6CfMm/ljR4pABfrTeHNLHUY=
 github.com/gobuffalo/depgen v0.1.0/go.mod h1:+ifsuy7fhi15RWncXQQKjWS9JPkdah5sZvtHc2RXGlg=
