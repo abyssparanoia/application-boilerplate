@@ -19,7 +19,7 @@ require (
 	github.com/go-openapi/validate v0.22.0
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-sql-driver/mysql v1.6.0
-	github.com/go-testfixtures/testfixtures/v3 v3.7.0
+	github.com/go-testfixtures/testfixtures/v3 v3.8.0
 	github.com/golang/mock v1.6.0
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/handlers v1.5.1
