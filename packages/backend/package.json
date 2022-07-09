@@ -37,7 +37,7 @@
   "devDependencies": {
     "@nestjs/testing": "8.4.7",
     "@types/express": "4.17.13",
-    "@types/node": "16.11.42"
+    "@types/node": "16.11.43"
   },
   "jest": {
     "moduleFileExtensions": [
