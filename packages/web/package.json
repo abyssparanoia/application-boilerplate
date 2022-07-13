@@ -20,7 +20,7 @@
     "faker": "5.5.3",
     "firebase": "9.8.4",
     "firebase-admin": "10.3.0",
-    "moment": "2.29.3",
+    "moment": "2.29.4",
     "next": "12.2.0",
     "next-offline": "5.0.5",
     "nookies": "2.5.2",
