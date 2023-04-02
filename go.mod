@@ -37,8 +37,8 @@ require (
 	github.com/volatiletech/sqlboiler/v4 v4.12.0
 	github.com/volatiletech/strmangle v0.0.4
 	go.uber.org/zap v1.22.0
-	golang.org/x/net v0.0.0-20220812174116-3211cb980234
-	golang.org/x/text v0.3.8
+	golang.org/x/net v0.7.0
+	golang.org/x/text v0.7.0
 	google.golang.org/api v0.93.0
 	google.golang.org/grpc v1.48.0
 )
@@ -88,7 +88,7 @@ require (
 	go.uber.org/multierr v1.8.0 // indirect
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d // indirect
 	golang.org/x/oauth2 v0.0.0-20220622183110-fd043fe589d2 // indirect
-	golang.org/x/sys v0.0.0-20220919091848-fb04ddd9f9c8 // indirect
+	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220609144429-65e65417b02f // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220624142145-8cd45d7dbd1f // indirect
