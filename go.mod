@@ -9,7 +9,7 @@ require (
 	github.com/bxcodec/faker v2.0.1+incompatible
 	github.com/caarlos0/env/v6 v6.9.3
 	github.com/friendsofgo/errors v0.9.2
-	github.com/go-chi/chi v1.5.4
+	github.com/go-chi/chi v1.5.5
 	github.com/go-openapi/errors v0.20.4
 	github.com/go-openapi/loads v0.21.2
 	github.com/go-openapi/runtime v0.26.2
