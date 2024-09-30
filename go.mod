@@ -7,7 +7,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/blendle/zapdriver v1.3.1
 	github.com/bxcodec/faker v2.0.1+incompatible
-	github.com/caarlos0/env/v6 v6.9.3
+	github.com/caarlos0/env/v6 v6.10.1
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-chi/chi v1.5.5
 	github.com/go-openapi/errors v0.22.0
