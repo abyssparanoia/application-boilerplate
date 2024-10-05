@@ -14,7 +14,7 @@
     "@boilerplate/firebase-client": "0.0.1",
     "@quentin-sommer/react-useragent": "3.2.0",
     "axios": "1.7.7",
-    "core-js": "3.35.0",
+    "core-js": "3.38.1",
     "date-fns": "2.30.0",
     "express": "4.20.0",
     "faker": "5.5.3",
