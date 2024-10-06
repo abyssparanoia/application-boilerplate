@@ -29,7 +29,7 @@ require (
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.20.0
 	github.com/pkg/errors v0.9.1
-	github.com/rs/xid v1.4.0
+	github.com/rs/xid v1.6.0
 	github.com/spf13/cobra v1.5.0
 	github.com/stretchr/testify v1.9.0
 	github.com/unrolled/render v1.5.0
