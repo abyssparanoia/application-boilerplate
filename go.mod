@@ -38,7 +38,7 @@ require (
 	github.com/volatiletech/strmangle v0.0.6
 	go.uber.org/zap v1.22.0
 	golang.org/x/net v0.23.0
-	golang.org/x/text v0.14.0
+	golang.org/x/text v0.19.0
 	google.golang.org/api v0.114.0
 	google.golang.org/grpc v1.56.3
 )
@@ -91,7 +91,7 @@ require (
 	go.uber.org/multierr v1.8.0 // indirect
 	golang.org/x/crypto v0.21.0 // indirect
 	golang.org/x/oauth2 v0.7.0 // indirect
-	golang.org/x/sync v0.6.0 // indirect
+	golang.org/x/sync v0.8.0 // indirect
 	golang.org/x/sys v0.21.0 // indirect
 	golang.org/x/time v0.1.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
